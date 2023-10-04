@@ -74,7 +74,7 @@ def main():
             st = time.time()
             counter = 0
             for i in aliceWords:
-                if linearSearch(dictionary, i)[0] == -1:
+                if linearSearch(dictionary, i.lower())[0] == -1:
                     counter += 1
                 else:
                     pass
@@ -85,11 +85,8 @@ def main():
             print('Binary Search starting')
             st = time.time()
             counter = 0
-            already_searched = []
             for i in aliceWords:
-                # if i not in already_searched:
-                #     already_searched.append(i)
-                if binarySearch(dictionary, i)[0] == -1:
+                if binarySearch(dictionary, i.lower())[0] == -1:
                     counter += 1
             ft = time.time() - st
             print(f'Number of words not found in dictionary: {counter} ({ft} seconds)')
